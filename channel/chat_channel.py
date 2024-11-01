@@ -336,7 +336,7 @@ class ChatChannel(Channel):
     def consume(self):
         while True:
             with self.lock:
-                session_ids = list(self.sessions.keys())
+                session_ids = list(self.sessions.keys()) # sessionid 为对方用户名，群组为群聊名称
                 for session_id in session_ids:
                     context_queue, semaphore = self.sessions[session_id]
                     if semaphore.acquire(blocking=False):  # 等线程处理完毕才能删除
@@ -346,7 +346,7 @@ class ChatChannel(Channel):
                             future: Future = handler_pool.submit(self._handle, context)
                             future.add_done_callback(self._thread_pool_callback(session_id, context=context))
                             if session_id not in self.futures:
-                                self.futures[session_id] = []
+                                self.futures[session_id] = [] # 创建列表(初始化)，处理同一个回话中的多条消息
                             self.futures[session_id].append(future)
                         elif semaphore._initial_value == semaphore._value + 1:  # 除了当前，没有任务再申请到信号量，说明所有任务都处理完毕
                             self.futures[session_id] = [t for t in self.futures[session_id] if not t.done()]

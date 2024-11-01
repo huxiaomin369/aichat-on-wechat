@@ -25,6 +25,9 @@ class ContextType(Enum):
 
 class Context:
     def __init__(self, type: ContextType = None, content=None, kwargs=dict()):
+        """
+        kwargs 是个键为msg 值为msg对象 的字典, msg对象包含对话各类信息，如发送人、接收人、私聊、群组等
+        """
         self.type = type
         self.content = content
         self.kwargs = kwargs

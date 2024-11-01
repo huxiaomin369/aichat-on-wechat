@@ -5,6 +5,9 @@ from config import conf
 
 class Session(object):
     def __init__(self, session_id, system_prompt=None):
+        """
+        system_prompt: bot 人格描述
+        """
         self.session_id = session_id
         self.messages = []
         if system_prompt is None:
@@ -38,6 +41,10 @@ class Session(object):
 
 class SessionManager(object):
     def __init__(self, sessioncls, **session_args):
+        """
+        sessioncls: bot 自定义session类;
+        session_args: sessioncls初始化参数
+        """
         if conf().get("expires_in_seconds"):
             sessions = ExpiredDict(conf().get("expires_in_seconds"))
         else:

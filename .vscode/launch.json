@@ -8,8 +8,10 @@
       "name": "startDebug",
       "type": "debugpy",
       "request": "launch",
-      "program": "workspaceFolder",
-      "console": "integratedTerminal"
+      "program": "${workspaceFolder}/app.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "python": "/data/home/mhu/02-learn/python/ENTER/envs/aichat/bin/python",
     }
   ]
 }

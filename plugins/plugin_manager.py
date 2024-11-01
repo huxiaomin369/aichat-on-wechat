@@ -25,6 +25,9 @@ class PluginManager:
         self.loaded = {}
 
     def register(self, name: str, desire_priority: int = 0, **kwargs):
+        """
+        装饰器 plugincls 为被装饰的类
+        """
         def wrapper(plugincls):
             plugincls.name = name
             plugincls.priority = desire_priority

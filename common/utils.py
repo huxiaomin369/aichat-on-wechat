@@ -59,7 +59,7 @@ def get_path_suffix(path):
 def convert_webp_to_png(webp_image):
     from PIL import Image
     try:
-        webp_image.seek(0)
+        webp_image.seek(0) # 跳转到第0帧
         img = Image.open(webp_image).convert("RGBA")
         png_image = io.BytesIO()
         img.save(png_image, format="PNG")

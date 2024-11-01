@@ -1,4 +1,5 @@
 import sys
+import logging
 
 from bridge.context import *
 from bridge.reply import Reply, ReplyType
@@ -62,7 +63,7 @@ class TerminalChannel(ChatChannel):
 
     def startup(self):
         context = Context()
-        logger.setLevel("WARN")
+        logger.setLevel(logging.DEBUG)
         print("\nPlease input your question:\nUser:", end="")
         sys.stdout.flush()
         msg_id = 0
