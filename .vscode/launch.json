@@ -11,7 +11,7 @@
       "program": "${workspaceFolder}/app.py",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}",
-      "python": "/data/home/mhu/02-learn/python/ENTER/envs/aichat/bin/python",
+      "python": "/home/mhu/miniconda3/envs/aichat/bin/python",
     }
   ]
 }

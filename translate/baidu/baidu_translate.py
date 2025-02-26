@@ -45,5 +45,5 @@ class BaiduTranslator(Translator):
         text = "\n".join([item["dst"] for item in result["trans_result"]])
         return text
 
-    def make_md5(self, s, encoding="utf-8"):
+    def make_md5(self, s:str, encoding="utf-8"):
         return md5(s.encode(encoding)).hexdigest()

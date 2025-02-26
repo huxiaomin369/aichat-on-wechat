@@ -18,12 +18,12 @@ available_setting = {
     "proxy": "",  # openai使用的代理
     # chatgpt模型， 当use_azure_chatgpt为true时，其名称为Azure上model deployment名称
     "model": "gpt-3.5-turbo",  # 可选择: gpt-4o, pt-4o-mini, gpt-4-turbo, claude-3-sonnet, wenxin, moonshot, qwen-turbo, xunfei, glm-4, minimax, gemini等模型，全部可选模型详见common/const.py文件
-    "bot_type": "",  # 可选配置，使用兼容openai格式的三方服务时候，需填"chatGPT"。bot具体名称详见common/const.py文件列出的bot_type，如不填根据model名称判断，
+    "bot_type": "",  # 可选配置，使用兼容openai格式的三方服务时候，需填"chatGPT"。bot具体名称详见common/const.py文件列出的bot_type，如不填根据model名称判断，xunfei
     "use_azure_chatgpt": False,  # 是否使用azure的chatgpt
     "azure_deployment_id": "",  # azure 模型部署名称
     "azure_api_version": "",  # azure api版本
     # Bot触发配置
-    "single_chat_prefix": ["bot", "@bot"],  # 私聊时文本需要包含该前缀才能触发机器人回复
+    "single_chat_prefix": ["bot", "@bot"],  # 私聊时文本需要包含该前缀才能触发机器人回复 为""空时不需要前缀
     "single_chat_reply_prefix": "[bot] ",  # 私聊时自动回复的前缀，用于区分真人
     "single_chat_reply_suffix": "",  # 私聊时自动回复的后缀，\n 可以换行
     "group_chat_prefix": ["@bot"],  # 群聊时包含该前缀则会触发机器人回复
@@ -32,7 +32,7 @@ available_setting = {
     "group_chat_reply_suffix": "",  # 群聊时自动回复的后缀，\n 可以换行
     "group_chat_keyword": [],  # 群聊时包含该关键词则会触发机器人回复
     "group_at_off": False,  # 是否关闭群聊时@bot的触发
-    "group_name_white_list": ["ChatGPT测试群", "ChatGPT测试群2"],  # 开启自动回复的群名称列表
+    "group_name_white_list": ["ChatGPT测试群", "ChatGPT测试群2"],  # 开启自动回复的群名称列表 "ALL_GROUP" 开启所有群组
     "group_name_keyword_white_list": [],  # 开启自动回复的群名称关键词列表
     "group_chat_in_one_session": ["ChatGPT测试群"],  # 支持会话上下文共享的群名称
     "nick_name_black_list": [],  # 用户昵称黑名单

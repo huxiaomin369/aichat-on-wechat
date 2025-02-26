@@ -69,7 +69,7 @@ class SessionManager(object):
         return session
 
     def session_query(self, query, session_id):
-        session = self.build_session(session_id)
+        session:Session = self.build_session(session_id)
         session.add_query(query)
         try:
             max_tokens = conf().get("conversation_max_tokens", 1000)
@@ -80,7 +80,7 @@ class SessionManager(object):
         return session
 
     def session_reply(self, reply, session_id, total_tokens=None):
-        session = self.build_session(session_id)
+        session:Session = self.build_session(session_id)
         session.add_reply(reply)
         try:
             max_tokens = conf().get("conversation_max_tokens", 1000)

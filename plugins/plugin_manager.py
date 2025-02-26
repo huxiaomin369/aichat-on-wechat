@@ -175,7 +175,7 @@ class PluginManager:
 
     def load_plugins(self):
         self.load_config()
-        self.scan_plugins()
+        self.scan_plugins() # 扫描插件时就会运行插件的装饰器
         # 加载全量插件配置
         self._load_all_config()
         pconf = self.pconf
